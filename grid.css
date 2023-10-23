@@ -1,0 +1,143 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+a[href="#top"] {
+  margin: 1rem;
+  display: block;
+  font-size: 2rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+h2 {
+  margin-top: 50vh;
+  text-align: center;
+}
+
+img {
+  margin: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.menu {
+  margin-bottom: 100vh;
+  font-size: 125%;
+}
+
+.menu li {
+  margin-bottom: 1rem;
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+  height: 80vh;
+  background-color: #222;
+  border: medium solid #000;
+}
+
+.item {
+  padding: 1rem;
+  font-size: 1.25rem;
+  background-color: #666;
+  border: medium solid #999;
+}
+
+.grid-explicit {
+  display: grid;
+  /* ---GRID 3Cx3R */
+  /* 20vh es equivalente al 20% de la altura del viewport visible de la pantalla */
+  grid-template-rows: 2rem 20vh 30%;
+  /* 1fr es el espacio sobrante: si el tamaño total es de 1000px, la primera fila seria 500px, la segunda, 100px y el tercero, el espacio sobrante que en este caso seria 400px */
+  grid-template-columns: 50% 100px 1fr;
+  /* ---GRID 5Cx4R */
+  /* repeat(5): 5 columnas del mismo tamaño, 20%: del 100% 20% representaria que tendria 5 espacios ocupando todo*/
+  grid-template-columns: repeat(5, 20%);
+  /* repeat(5, 20%) y repeat(5, 1fr) son proporcionales, equivalen a lo mismo, creo que es mejor usar la 2da opcion y asi no tener que calcular los porcentajes  */
+  grid-template-columns: repeat(5, 1fr);
+  /* 4 filas y que el tamaño se adapte al tamaño cel contenido*/
+  grid-template-rows: repeat(4, auto);
+  /* para experimentar! */
+  /* grid-template-rows: repeat(4, 25%); */
+  /* repeat(4, auto) y (4, 1fr) son equivalentes, se reparten el espacio, pero tener en cuenta que le dan prioridad al contenido y luego se reparten el esacio sobrante */
+  grid-template-rows: repeat(4, 1fr);
+  /* ---GRID 4Cx5R */
+  grid-template-columns: 20% 30% 30% 20%;
+  /* equivalente a: */
+  grid-template-columns: 20% repeat(2, 30%) 20%;
+  grid-template-rows: repeat(5, auto);
+  row-gap: 4rem;
+  column-gap: 2rem;
+  /* gap: shorthand para grid-row y grid-column: espaciado entre filas y columnas, cuidado con el desborde! */
+  gap: 1vh 1vw;
+  gap: 0;
+}
+
+.grid-explicit .item:nth-child(10) {
+  color: cyan;
+  /* para cambiar de posicion explicitamente */
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  /* shorthand de grid-row-start y rid-row-end*/
+  grid-row: 2/3;
+  /* shorthand de grid-column-start y rid-column-end*/
+  /* ---aqui se combino celdas */
+  grid-column: 3/5;
+  /* shorthand de grid-row y grid-column */
+  /* row start / column start /  row end /column end*/
+  grid-area: 2/3 / 3/5;
+}
+
+.grid-explicit .item:nth-child(12) {
+  color: yellowgreen;
+  /* span: indica que abarque X filas o X columnas */
+  grid-row: span 2;
+  grid-column: span 3;
+}
+
+.grid-explicit .item:nth-child(15) {
+  color: red;
+  /* 1/sapn 2 : comienza en la linea 1 y abarcas 2 filas */
+  grid-row: 1 / span 2;
+  /* 1/sapn 3 : comienza en la linea 1 y abarcas 2 columnas */
+  grid-column: 1 / span 2;
+}
+
+/* ESTE METODO DE PONER NOMBRE SA LAS LINEAS GENERA MUCHO TEXTO */
+.grid-line-names {
+  display: grid;
+  /* Grid de 3cx3r */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  /* Dando nombres a las lineas */
+  grid-template-columns: [line-c1] 1fr [line-c2] 1fr [line-c3] 1fr [line-c4];
+  grid-template-rows: [line-r1] 1fr [line-r2] 1fr [line-r3] 1fr [line-r4];
+  grid-template-rows: [line-r1] auto [line-r2] auto [line-r3] auto [line-r4]; /* auto: el tamaño se adapta al contenido */
+}
+
+.grid-line-names .item:nth-child(3) {
+  color: cyan;
+  grid-column: line-c1 / line-c4;
+  grid-row: line-r3 / line-r4;
+  /* shorthand de grid-row y grid-column */
+  /* row start / column start /  row end /column end*/
+  grid-area: line-r3 / line-c1 / line-r4 / line-c4;
+}
