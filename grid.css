@@ -176,3 +176,15 @@ img {
 .footer {
   grid-area: footer;
 }
+
+/* --------Grid Implícita-------- */
+/* Se usa la grid implicita en instagram, facebook... cuando se hace scroll para que cargue y se vea mas contenido */
+.grid-implicit {
+  /* Grid de 4cx3r */
+  /* las areas restantes tomaran se adaptaran al tamaño de su contenido */
+  width: 40%; /* cada grid ocupara 40%, en total 80% */
+  display: grid; /* efecto en bloque */
+  display: inline-grid; /* invertir con display=grid para ver elcomportamiento */
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 150px);
+}
