@@ -59,6 +59,7 @@ img {
   border: medium solid #999;
 }
 
+/* -------Grid Explícita--------- */
 .grid-explicit {
   display: grid;
   /* ---GRID 3Cx3R */
@@ -121,6 +122,7 @@ img {
   grid-column: 1 / span 2;
 }
 
+/* ----------Grid con Nombres de Línea----------- */
 /* ESTE METODO DE PONER NOMBRE SA LAS LINEAS GENERA MUCHO TEXTO */
 .grid-line-names {
   display: grid;
@@ -140,4 +142,37 @@ img {
   /* shorthand de grid-row y grid-column */
   /* row start / column start /  row end /column end*/
   grid-area: line-r3 / line-c1 / line-r4 / line-c4;
+}
+
+/* --------Grid con Áreas---------- */
+.grid-areas {
+  display: grid;
+  /* Grid de 2cx3r */
+  grid-template-columns: 1fr 200px;
+  grid-template-rows: 100px repeat(2, 1fr) 60px;
+  /* Descripcion de las areas */
+  /* cuando se coloca un punto "." en la descripcion de una area en CSS, significa dejar la celda vacia */
+  /* si se quieres cambiar la disposicon en medias queries, solo se tiene que cambiar el grid-templates-area */
+  grid-template-areas:
+    "header  header"
+    "content sidebar"
+    "content ."
+    "footer  footer";
+}
+
+/* grid-area: tb sirve para definir un nombre a las areas (sin comillas) que hayan sido definidas en grid-template-areas */
+.header {
+  grid-area: header;
+}
+
+.content {
+  grid-area: content;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.footer {
+  grid-area: footer;
 }
