@@ -186,5 +186,18 @@ img {
   display: grid; /* efecto en bloque */
   display: inline-grid; /* invertir con display=grid para ver elcomportamiento */
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 150px);
+  grid-template-rows: repeat(3, 200px);
+}
+
+/* Flujo de la Grid */
+.grid-flow {
+  display: grid;
+  /* Grid de 5cx3r */
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 100px);
+  /* son parecidos a flexbox */
+  grid-auto-flow: row; /* por defecto */
+  grid-auto-rows: 50px; /* que todas las rows que se generen implicitamente tengan 5px */
+  grid-auto-flow: column; /* la parte implicita ahora son las columnas y no las filas */
+  grid-auto-columns: 50px; /* que todas las columns que se generen implicitamente tengan 50px */
 }
