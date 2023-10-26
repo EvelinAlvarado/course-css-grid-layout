@@ -268,3 +268,24 @@ img {
   grid-column: 2/4;
   grid-row: 2/4;
 }
+
+/* -------Ordenamiento de Grid Items------- */
+.grid-order {
+  display: grid;
+  /* Grid de 3cx2r */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.grid-order .item:nth-child(1) {
+  /* el valor por default es 0, valores positivos y negativos */
+  order: 1;
+}
+
+.grid-order .item:nth-child(2) {
+  order: 2;
+}
+
+.grid-order .item:nth-child(5) {
+  order: -1;
+}
