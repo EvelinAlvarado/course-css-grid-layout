@@ -201,3 +201,30 @@ img {
   grid-auto-flow: column; /* la parte implicita ahora son las columnas y no las filas */
   grid-auto-columns: 50px; /* que todas las columns que se generen implicitamente tengan 50px */
 }
+
+/* -------Fujo denso de la grid (Grid Flow Dense)------- */
+.grid-flow-dense {
+  display: grid;
+  /* Grid de 5cx4r */
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 150px);
+  /* antes de aplicar el "dense" estaban 2 lugares vacios */
+  /* al apalicar "dense" se autocompleta con los areas sobrantes dentro de la grid explicita - se generan FILAS implicitas*/
+  grid-auto-flow: row dense;
+  /* al apalicar "dense" se autocompleta con los areas sobrantes dentro de la grid explicita - se generan COLUMNAS implicitas*/
+  grid-auto-flow: column dense;
+}
+
+/* para probar con: grid-auto-flow: row dense; */
+/* .grid-flow-dense .item:nth-child(9) {
+  color: cyan;
+  grid-row: span 3;
+  grid-column: span 3;
+} */
+
+/* para probar con: grid-auto-flow: column dense; */
+.grid-flow-dense .item:nth-child(11) {
+  color: cyan;
+  grid-row: span 3;
+  grid-column: span 3;
+}
