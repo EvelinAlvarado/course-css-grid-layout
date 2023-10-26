@@ -230,6 +230,7 @@ img {
 }
 
 /* ------Grid Items en Capas (superposición)------ */
+/* BUENA TECNICA PARA SUPERPOCICIONES */
 .grid-layers {
   display: grid;
   /* Grid de 5cx4r */
