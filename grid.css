@@ -314,3 +314,26 @@ img {
   /* ALIGN-SELF: alinea al elemento en Y */
   align-self: start;
 }
+
+/* ------Alineamiento de Grid TRACKS------ */
+/* se alinean filas o columnas */
+.grid-align-tracks {
+  display: grid;
+  /* Grid de 3cx2r */
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(2, 200px);
+  /* JUSTIFY-CONTENT: alinea los tracks en X */
+  justify-content: start; /* en display flex es flex-start, no confundir */
+  justify-content: end;
+  justify-content: center;
+  justify-content: space-between;
+  justify-content: space-around;
+  justify-content: space-evenly;
+  /* ALIGN-CONTENT: alinea los tracks en Y */
+  align-content: start;
+  align-content: end;
+  align-content: center;
+  align-content: space-between;
+  align-content: space-around;
+  align-content: space-evenly;
+}
