@@ -59,7 +59,7 @@ img {
   border: medium solid #999;
 }
 
-/* -------Grid Explícita--------- */
+/* *-------Grid Explícita--------- */
 .grid-explicit {
   display: grid;
   /* ---GRID 3Cx3R */
@@ -122,8 +122,8 @@ img {
   grid-column: 1 / span 2;
 }
 
-/* ----------Grid con Nombres de Línea----------- */
-/* ESTE METODO DE PONER NOMBRE SA LAS LINEAS GENERA MUCHO TEXTO */
+/* *----------Grid con Nombres de Línea----------- */
+/* ESTE METODO DE PONER NOMBRE EN LAS LINEAS GENERA MUCHO TEXTO */
 .grid-line-names {
   display: grid;
   /* Grid de 3cx3r */
@@ -144,14 +144,15 @@ img {
   grid-area: line-r3 / line-c1 / line-r4 / line-c4;
 }
 
-/* --------Grid con Áreas---------- */
+/* *--------Grid con Áreas---------- */
+/* ?UNO DE LOS MEJORES METODOS */
 .grid-areas {
   display: grid;
   /* Grid de 2cx3r */
   grid-template-columns: 1fr 200px;
   grid-template-rows: 100px repeat(2, 1fr) 60px;
   /* Descripcion de las areas */
-  /* cuando se coloca un punto "." en la descripcion de una area en CSS, significa dejar la celda vacia */
+  /* ?cuando se coloca un punto "." en la descripcion de una area en CSS, significa dejar la celda vacia */
   /* si se quieres cambiar la disposicon en medias queries, solo se tiene que cambiar el grid-templates-area */
   grid-template-areas:
     "header  header"
@@ -160,7 +161,7 @@ img {
     "footer  footer";
 }
 
-/* grid-area: tb sirve para definir un nombre a las areas (sin comillas) que hayan sido definidas en grid-template-areas */
+/* ?grid-area: tb sirve para definir un nombre a las areas (sin comillas) que hayan sido definidas en grid-template-areas */
 .header {
   grid-area: header;
 }
@@ -177,8 +178,8 @@ img {
   grid-area: footer;
 }
 
-/* --------Grid Implícita-------- */
-/* Se usa la grid implicita en instagram, facebook... cuando se hace scroll para que cargue y se vea mas contenido */
+/* *--------Grid Implícita-------- */
+/* ?Se usa la grid implicita en instagram, facebook... cuando se hace scroll para que cargue y se vea mas contenido */
 .grid-implicit {
   /* Grid de 4cx3r */
   /* las areas restantes tomaran se adaptaran al tamaño de su contenido */
@@ -189,7 +190,7 @@ img {
   grid-template-rows: repeat(3, 200px);
 }
 
-/* Flujo de la Grid */
+/* *Flujo de la Grid */
 .grid-flow {
   display: grid;
   /* Grid de 5cx3r */
@@ -202,7 +203,7 @@ img {
   grid-auto-columns: 50px; /* que todas las columns que se generen implicitamente tengan 50px */
 }
 
-/* -------Fujo denso de la grid (Grid Flow Dense)------- */
+/* *-------Fujo denso de la grid (Grid Flow Dense)------- */
 .grid-flow-dense {
   display: grid;
   /* Grid de 5cx4r */
@@ -229,8 +230,8 @@ img {
   grid-column: span 3;
 }
 
-/* ------Grid Items en Capas (superposición)------ */
-/* BUENA TECNICA PARA SUPERPOCICIONES */
+/* *------Grid Items en Capas (superposición)------ */
+/* ?BUENA TECNICA PARA SUPERPOCICIONES */
 .grid-layers {
   display: grid;
   /* Grid de 5cx4r */
@@ -269,7 +270,7 @@ img {
   grid-row: 2/4;
 }
 
-/* -------Ordenamiento de Grid Items------- */
+/* *-------Ordenamiento de Grid Items------- */
 .grid-order {
   display: grid;
   /* Grid de 3cx2r */
@@ -290,7 +291,7 @@ img {
   order: -1;
 }
 
-/* ------Alineamiento de Grid ITEMS-------- */
+/* *------Alineamiento de Grid ITEMS-------- */
 .grid-align {
   display: grid;
   /* Grid de 3cx2r */
@@ -315,7 +316,7 @@ img {
   align-self: start;
 }
 
-/* ------Alineamiento de Grid TRACKS------ */
+/* *------Alineamiento de Grid TRACKS------ */
 /* se alinean filas o columnas */
 .grid-align-tracks {
   display: grid;
@@ -336,4 +337,36 @@ img {
   align-content: space-between;
   align-content: space-around;
   align-content: space-evenly;
+}
+
+/* *------Tamaños Máximos y Mínimos de Grid Tracks------ */
+.grid-min-max {
+  display: grid;
+  /* Grid de 4cx?r */
+  /* ?r: para generar un scroll infinito */
+  grid-template-columns: repeat(4, 1fr); /* el tamaño disminuye o aumenta */
+  grid-template-columns: repeat(
+    4,
+    minmax(100px, 200px)
+  ); /* hay tamaño minimo o maximo */
+  grid-template-columns: repeat(
+    4,
+    minmax(min-content, 200px)
+  ); /* min-content: que se adapte al minimo tamaño del contenido. como el tamaño minimo */
+  grid-template-columns: repeat(
+    4,
+    minmax(100px, min-content)
+  ); /* min-content: que se adapte al minimo tamaño del contenido, como el tamaño maximo */
+  grid-template-columns: repeat(
+    4,
+    minmax(100px, max-content)
+  ); /* max-content: que se adapte al maximo tamaño del contenido, como el tamaño maximo */ /* ?activar el lorem ipsum para ver la funcionalidad */
+  grid-template-columns: repeat(
+    4,
+    minmax(max-content, 200px)
+  ); /* max-content:  el tamaño minimo es el tamaño maximo del contenido */ /* ?activar el lorem ipsum para ver la funcionalidad */
+  grid-template-columns: repeat(
+    4,
+    minmax(min-content, max-content)
+  ); /* se adapta al tamaño del viewport sin usar media queries */ /* ?activar el lorem ipsum para ver la funcionalidad */
 }
