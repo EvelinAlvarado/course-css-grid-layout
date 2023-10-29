@@ -386,3 +386,33 @@ img {
     100px 140px
   ); /* cuando las filas se generen implicitamente, repite este patron */
 }
+
+/* *------Grids Dinámicas-------- */
+.grid-dynamics {
+  display: grid;
+  /* Grid de 4cx?r */
+  grid-template-columns: repeat(4, 100px);
+  /* ?auto-fill rellena la grid con tracks generados dinamicamente - ajemplo:redes sociales - las lineas se ven con "inspecionar" */
+  grid-template-columns: repeat(auto-fill, 100px);
+  /* ?auto-fit: AJUSTA la grid con los tracks existentes, es como flex-grow, aprovecha el espacio sobrante y lo aplica a los tracks existentes */
+  grid-template-columns: repeat(auto-fit, 100px);
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(100px, 1fr)
+  ); /* se mantiene con 100px */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(100px, 1fr)
+  ); /* aumenta y disminuye de tamaño */
+}
+
+/* *------Responsive sin Media Queries-------- */
+.grid-responsive {
+  display: grid;
+  /* con auto-fit le dice que se van a repetir tantas columnas comose necesite y con minmax, el tamaño minimo sera 200px y 1fr, lo que quepa */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  ); /* se usa 200px en comparacion de un smartpnhe de 380px */
+  /* gap: 1vw; */
+}
