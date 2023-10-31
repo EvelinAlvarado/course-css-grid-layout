@@ -4,25 +4,25 @@ Este repositorio contiene los archivos del curso de CSS Grid que aprendí siguie
 
 ## Temario del Curso 📚
 
-- [Conceptos Básicos](#grid-terms)
-- [Grid Explícita](#grid-explicit)
-- [Grid con Nombres de Línea](#grid-line-names)
-- [Grid con Áreas](#grid-areas)
-- [Grid Implícita](#grid-implicit)
-- [Flujo de la Grid](#grid-flow)
-- [Flujo Denso de la Grid](#grid-flow-dense)
-- [Grid Items en Capas (superposición)](#grid-layer)
-- [Ordenamiento de Grid Items](#grid-order)
-- [Alineamiento de Grid Items](#grid-align)
-- [Alineamiento de Grid Tracks](#grid-align-tracks)
-- [Tamaños Máximos y Mínimos de Grid Tracks](#grid-min-max)
-- [Grid con Patrones Repetitivos](#grid-repeat)
-- [Grids Dinámicas](#grid-dynamics)
-- [Responsive sin Media Queries](#grid-responsive)
-- [Grids Anidados](#grid-nested)
-- [Subgrids](#subgrid)
-- [Grid Layout con Líneas](#grid_layout)
-- [Grid Layout con Áreas](#grid_layout_areas)
+- [Conceptos Básicos]
+- [Grid Explícita]
+- [Grid con Nombres de Línea]
+- [Grid con Áreas]
+- [Grid Implícita]
+- [Flujo de la Grid]
+- [Flujo Denso de la Grid]
+- [Grid Items en Capas (superposición)]
+- [Ordenamiento de Grid Items]
+- [Alineamiento de Grid Items]
+- [Alineamiento de Grid Tracks]
+- [Tamaños Máximos y Mínimos de Grid Tracks]
+- [Grid con Patrones Repetitivos]
+- [Grids Dinámicas]
+- [Responsive sin Media Queries]
+- [Grids Anidados]
+- [Subgrids]
+- [Grid Layout con Líneas]
+- [Grid Layout con Áreas]
 
 ## Proyecto Personal 🚀
 
